@@ -29,9 +29,22 @@ if(testItem.isComplete){
 
 window.onload = function(){
     let addBtn = <HTMLElement>document.querySelector("#create-item > button");
-
     addBtn.onclick = processNewItem;
 
+    let readItemBtn = <HTMLElement>document.querySelector("#read-item > button");
+    readItemBtn.onclick = readItem;
+
+}
+
+const itemKey:string = "todo";
+
+function readItem(){
+    //Get item from storage
+    let item:ToDoItem = 
+        JSON.parse(localStorage.getItem(itemKey));
+
+    alert(item.title);
+    alert(item.description);
 }
 
 function processNewItem(){
@@ -72,7 +85,7 @@ function saveItem(item:ToDoItem):void{
 
     //Ensure user can use localStorage
     if(typeof(Storage) != "undefined"){
-        localStorage.setItem("todo", data);
+        localStorage.setItem(itemKey, data);
     }
 }
 /**
