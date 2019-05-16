@@ -27,24 +27,52 @@ if(testItem.isComplete){
     //Notify user and clear form(another method // or alert)
     //Save ToDo item
 
-    window.onload = function(){
-        let addBtn = <HTMLElement>document.querySelector("#create-item > button");
+window.onload = function(){
+    let addBtn = <HTMLElement>document.querySelector("#create-item > button");
 
-        addBtn.onclick = processNewItem;
-    }
+    addBtn.onclick = processNewItem;
 
-    function processNewItem(){
+}
+
+function processNewItem(){
         //Wrap in if(isValid)
         let item:ToDoItem = getItemFromForm();
         saveItem(item);
         notifyUser();
         clearForm();
+}
+
+function clearForm(){
+    // Easiest to wrap all inputs in form and call reset. Practice with JS sake.
+    
+    // Traverses thru all elements selected and sets text elements back to blank.
+    let textElements = document.querySelectorAll("input[type=text], textarea");
+    for(let i = 0; i < textElements.length; i++){
+        (<HTMLInputElement>textElements[i]).value = "";
     }
 
-function saveITem(item:ToDoItem):void{
+    //uncheck is complete ( query selector calls for #)
+    let iscompleteBox = <HTMLInputElement>document.querySelector("#is-complete");
+    iscompleteBox.checked = false;
+
+    //reset select list
+    let urgencyList = <HTMLSelectElement>document.querySelector("#urgency");
+    urgencyList.selectedIndex = 0;
+}
+
+function notifyUser(){
+    alert("your item was saved");
+}
+
+function saveItem(item:ToDoItem):void{
+    // saving the item we created item as JSON string
+    let data:string = JSON.stringify(item);
+    console.log("converting ToDo item into JSON string..")
+    console.log(data);
+
     //Ensure user can use localStorage
     if(typeof(Storage) != "undefined"){
-        localStorage.setItem("todo", item.title);
+        localStorage.setItem("todo", data);
     }
 }
 /**
@@ -70,8 +98,6 @@ function getItemFromForm():ToDoItem{
 
         let urgencyElem = <HTMLSelectElement>document.getElementById("urgency");
         item.urgency = urgencyElem.options[urgencyElem.selectedIndex].text;
-
-
         
         return item;
 }
