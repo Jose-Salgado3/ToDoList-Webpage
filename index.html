@@ -62,7 +62,11 @@
     <script src="scripts/datepicker.min.js"></script>
     <link rel="stylesheet" href="css/site.css">
     <script>
-        const picker = datepicker(".due-date");
+        //Loop through all due-date class elements and add the datepicker
+        let allDateElem = document.querySelectorAll(".due-date");
+        for ( let i = 0; i < allDateElem.length; i++){
+            datepicker(allDateElem[i]);
+        }  
     </script>
 </body>
 </html>
