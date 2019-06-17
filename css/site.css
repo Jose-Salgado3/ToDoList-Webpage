@@ -2,21 +2,33 @@ body{
     background-color: silver;
     display: block;
     font-size: 22px;
-   
+   background-color: gray;
 }
 
-div#create-item, div#read-item{
-    margin-left: 3em;
+div#create-item{
+    margin-left: 20em;
     width: 50%;
     display: inline-block;
-    border: 1px solid black;
-    
+    border-top: 1px groove black;
+    border-left: 1px groove black;
+    border-right: 1px groove black;
+    padding-left: .50em;
 
 }
+div#read-item{
+    margin-left: 20em;
+    width: 50%;
+    display: inline-block;
+    border-bottom: 1px groove black;
+    border-left: 1px groove black;
+    border-right: 1px groove black;
+    padding-left:.50em;
+    padding-bottom: .25em;
+}
 
-div#create-item, div#read-item > button{
+div#create-item > button, div#read-item > button{
     margin-top: 6px;
-
+    color:brown;
 }
 
 div#create-item > #title, #title, #description, #start-date, #end-date{
@@ -24,6 +36,7 @@ div#create-item > #title, #title, #description, #start-date, #end-date{
     margin-bottom: 10px;
     border: 1px solid gray;
     border-radius: 1em;
+    
 
 }
 
@@ -35,23 +48,22 @@ div#group{
 
 
 div#todo-list > p, p.completed{
-    background-color: green;
+    background-color: aquamarine;
     color: white;
     padding: .5em;
     border-radius: .2em;
     display: inline-block;
-    margin-right: .75em;
-    
+    margin-left: 20em;
+
 }
 p.completed{
     text-decoration: line-through;
-    background-color: lightgreen !important;
+    background-color: rgb(245, 72, 29) !important;
+    margin-left: 56em !important;
 }
 
 header{
     text-align: center;
     font-family:cursive;
     color: aquamarine;
-
-
 }
