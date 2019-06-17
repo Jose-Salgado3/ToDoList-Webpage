@@ -1,3 +1,38 @@
+body{
+    background-color: silver;
+    display: block;
+    font-size: 22px;
+   
+}
+
+div#create-item, div#read-item{
+    margin-left: 3em;
+    width: 50%;
+    display: inline-block;
+    border: 1px solid black;
+    
+
+}
+
+div#create-item, div#read-item > button{
+    margin-top: 6px;
+
+}
+
+div#create-item > #title, #title, #description, #start-date, #end-date{
+
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 1em;
+
+}
+
+div#group{
+    display: inline-block;
+    
+}
+
+
 
 div#todo-list > p, p.completed{
     background-color: green;
@@ -6,8 +41,17 @@ div#todo-list > p, p.completed{
     border-radius: .2em;
     display: inline-block;
     margin-right: .75em;
+    
 }
 p.completed{
     text-decoration: line-through;
     background-color: lightgreen !important;
+}
+
+header{
+    text-align: center;
+    font-family:cursive;
+    color: aquamarine;
+
+
 }

@@ -17,28 +17,38 @@
         <h1>Create your ToDo List</h1>
     </header>
     <div id="create-item">
-        <label for="title">Title:</label>
-        <input id="title" type="text">
-        <span>*</span>
+        <div class="group">
+            <label for="title">Title:</label>
+            <input id="title" type="text">
+            <span>*</span>
+        </div>
         <br>
-        <label for="description"></label>
-        <textarea id="description" rows="8" cols="25"></textarea>
-        <span></span>
+        <div class="group">
+            <label for="description">Description:</label>
+            <textarea id="description" rows="8" cols="25"></textarea>
+            <span></span>
+        </div>
         <br>
     
+        <div class="group">
+            <label for="start-date">Start Date:</label>
+            <input id="start-date" class="due-date" type="text">
+            <span></span>
+        </div>
+        <br>
+
+        <div class="group">
+            <label for="end-date">End Date:</label>
+            <input id="end-date" class="due-date" type="text">
+            <span></span>
+        </div>
         
-        <label for="start-date">Start Date:</label>
-        <input id="start-date" class="due-date" type="text">
-        <span></span>
         <br>
 
-        <label for="end-date">End Date:</label>
-        <input id="end-date" class="due-date" type="text">
-        <span></span>
-        <br>
-
-        <label for="is-compelete"> Is Complete?</label>
-        <input type="checkbox" id="is-complete">
+        <div class="group">
+            <label for="is-compelete"> Is Complete?</label>
+            <input type="checkbox" id="is-complete">
+        </div>
         <br>    
 
         <label>Choose an urgency:</label>
@@ -48,7 +58,7 @@
             <option value="H">High</option>
         </select>
         <br>
-
+        
         <button type="button">Add ToDo Item</button>
 
     </div>
